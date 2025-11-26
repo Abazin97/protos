@@ -67,7 +67,7 @@ func (x *RequestOTPRequest) GetPhone() string {
 
 type RequestOTPResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	RespId        string                 `protobuf:"bytes,1,opt,name=resp_id,json=respId,proto3" json:"resp_id,omitempty"`
+	Sid           string                 `protobuf:"bytes,1,opt,name=sid,proto3" json:"sid,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -102,9 +102,9 @@ func (*RequestOTPResponse) Descriptor() ([]byte, []int) {
 	return file_sso_sso_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *RequestOTPResponse) GetRespId() string {
+func (x *RequestOTPResponse) GetSid() string {
 	if x != nil {
-		return x.RespId
+		return x.Sid
 	}
 	return ""
 }
@@ -587,9 +587,9 @@ const file_sso_sso_proto_rawDesc = "" +
 	"\n" +
 	"\rsso/sso.proto\x12\x04auth\")\n" +
 	"\x11RequestOTPRequest\x12\x14\n" +
-	"\x05phone\x18\x01 \x01(\tR\x05phone\"-\n" +
-	"\x12RequestOTPResponse\x12\x17\n" +
-	"\aresp_id\x18\x01 \x01(\tR\x06respId\"<\n" +
+	"\x05phone\x18\x01 \x01(\tR\x05phone\"&\n" +
+	"\x12RequestOTPResponse\x12\x10\n" +
+	"\x03sid\x18\x01 \x01(\tR\x03sid\"<\n" +
 	"\x10VerifyOTPRequest\x12\x14\n" +
 	"\x05phone\x18\x01 \x01(\tR\x05phone\x12\x12\n" +
 	"\x04code\x18\x02 \x01(\tR\x04code\"-\n" +

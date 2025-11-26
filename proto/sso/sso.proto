@@ -22,7 +22,7 @@ message RequestOTPRequest{
 }
 
 message RequestOTPResponse{
-  string resp_id = 1;
+  string sid = 1;
 }
 
 message VerifyOTPRequest{
