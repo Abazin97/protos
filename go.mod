@@ -1,4 +1,4 @@
-module github.com/Abazin97/protos
+module github.com/Abazin97/protos/v2
 
 go 1.24.0
 
