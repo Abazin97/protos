@@ -300,6 +300,8 @@ type RegisterRequest struct {
 	Phone         string                 `protobuf:"bytes,3,opt,name=phone,proto3" json:"phone,omitempty"`                          // Phone of the user to register.
 	BirthDate     string                 `protobuf:"bytes,4,opt,name=birth_date,json=birthDate,proto3" json:"birth_date,omitempty"` // Birth date of the user.
 	Title         string                 `protobuf:"bytes,5,opt,name=title,proto3" json:"title,omitempty"`                          // Mr/Mrs title of the user.
+	Name          string                 `protobuf:"bytes,6,opt,name=name,proto3" json:"name,omitempty"`
+	LastName      string                 `protobuf:"bytes,7,opt,name=last_name,json=lastName,proto3" json:"last_name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -365,6 +367,20 @@ func (x *RegisterRequest) GetBirthDate() string {
 func (x *RegisterRequest) GetTitle() string {
 	if x != nil {
 		return x.Title
+	}
+	return ""
+}
+
+func (x *RegisterRequest) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *RegisterRequest) GetLastName() string {
+	if x != nil {
+		return x.LastName
 	}
 	return ""
 }
@@ -630,14 +646,16 @@ const file_sso_sso_proto_rawDesc = "" +
 	"\x0eIsAdminRequest\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\x03R\x06userId\",\n" +
 	"\x0fIsAdminResponse\x12\x19\n" +
-	"\bis_admin\x18\x01 \x01(\bR\aisAdmin\"\x8e\x01\n" +
+	"\bis_admin\x18\x01 \x01(\bR\aisAdmin\"\xbf\x01\n" +
 	"\x0fRegisterRequest\x12\x14\n" +
 	"\x05email\x18\x01 \x01(\tR\x05email\x12\x1a\n" +
 	"\bpassword\x18\x02 \x01(\tR\bpassword\x12\x14\n" +
 	"\x05phone\x18\x03 \x01(\tR\x05phone\x12\x1d\n" +
 	"\n" +
 	"birth_date\x18\x04 \x01(\tR\tbirthDate\x12\x14\n" +
-	"\x05title\x18\x05 \x01(\tR\x05title\"+\n" +
+	"\x05title\x18\x05 \x01(\tR\x05title\x12\x12\n" +
+	"\x04name\x18\x06 \x01(\tR\x04name\x12\x1b\n" +
+	"\tlast_name\x18\a \x01(\tR\blastName\"+\n" +
 	"\x10RegisterResponse\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\x03R\x06userId\"m\n" +
 	"\fLoginRequest\x12\x14\n" +
