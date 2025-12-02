@@ -48,6 +48,8 @@ message RegisterRequest {
   string phone = 3; // Phone of the user to register.
   string birth_date = 4; // Birth date of the user.
   string title = 5; // Mr/Mrs title of the user.
+  string name = 6;
+  string last_name = 7;
 }
 
 message RegisterResponse {
