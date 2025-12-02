@@ -8,7 +8,7 @@ option go_package = "github.com/Abazin97/sso/gen/go/sso";
 service Auth {
   // Register registers a new user.
   rpc Register (RegisterRequest) returns (RegisterResponse);
-  // Login logs in a user and returns an auth token.
+  // Login logs in a user and returns an auth token.git
   rpc Login (LoginRequest) returns (LoginResponse);
   // IsAdmin checks whether a user is an admin.
   rpc IsAdmin (IsAdminRequest) returns (IsAdminResponse);
@@ -46,6 +46,8 @@ message RegisterRequest {
   string email = 1; // Email of the user to register.
   string password = 2; // Password of the user to register.
   string phone = 3; // Phone of the user to register.
+  string birth_date = 4; // Birth date of the user.
+  string title = 5; // Mr/Mrs title of the user.
 }
 
 message RegisterResponse {
