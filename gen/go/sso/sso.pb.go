@@ -631,9 +631,10 @@ func (x *LogoutResponse) GetSuccess() bool {
 
 type ChangePassRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserId        int64                  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`               // ID of the user
-	OldPassword   string                 `protobuf:"bytes,2,opt,name=old_password,json=oldPassword,proto3" json:"old_password,omitempty"` // Current password of the user
-	NewPassword   string                 `protobuf:"bytes,3,opt,name=new_password,json=newPassword,proto3" json:"new_password,omitempty"` // New password of the user
+	Email         string                 `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
+	Phone         string                 `protobuf:"bytes,2,opt,name=phone,proto3" json:"phone,omitempty"`
+	OldPassword   string                 `protobuf:"bytes,3,opt,name=old_password,json=oldPassword,proto3" json:"old_password,omitempty"` // Current password of the user
+	NewPassword   string                 `protobuf:"bytes,4,opt,name=new_password,json=newPassword,proto3" json:"new_password,omitempty"` // New password of the user
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -668,11 +669,18 @@ func (*ChangePassRequest) Descriptor() ([]byte, []int) {
 	return file_sso_sso_proto_rawDescGZIP(), []int{12}
 }
 
-func (x *ChangePassRequest) GetUserId() int64 {
+func (x *ChangePassRequest) GetEmail() string {
 	if x != nil {
-		return x.UserId
+		return x.Email
 	}
-	return 0
+	return ""
+}
+
+func (x *ChangePassRequest) GetPhone() string {
+	if x != nil {
+		return x.Phone
+	}
+	return ""
 }
 
 func (x *ChangePassRequest) GetOldPassword() string {
@@ -772,11 +780,12 @@ const file_sso_sso_proto_rawDesc = "" +
 	"\rLogoutRequest\x12\x14\n" +
 	"\x05token\x18\x01 \x01(\tR\x05token\"*\n" +
 	"\x0eLogoutResponse\x12\x18\n" +
-	"\asuccess\x18\x01 \x01(\bR\asuccess\"r\n" +
-	"\x11ChangePassRequest\x12\x17\n" +
-	"\auser_id\x18\x01 \x01(\x03R\x06userId\x12!\n" +
-	"\fold_password\x18\x02 \x01(\tR\voldPassword\x12!\n" +
-	"\fnew_password\x18\x03 \x01(\tR\vnewPassword\".\n" +
+	"\asuccess\x18\x01 \x01(\bR\asuccess\"\x85\x01\n" +
+	"\x11ChangePassRequest\x12\x14\n" +
+	"\x05email\x18\x01 \x01(\tR\x05email\x12\x14\n" +
+	"\x05phone\x18\x02 \x01(\tR\x05phone\x12!\n" +
+	"\fold_password\x18\x03 \x01(\tR\voldPassword\x12!\n" +
+	"\fnew_password\x18\x04 \x01(\tR\vnewPassword\".\n" +
 	"\x12ChangePassResponse\x12\x18\n" +
 	"\asuccess\x18\x01 \x01(\bR\asuccess2\xa4\x03\n" +
 	"\x04Auth\x129\n" +

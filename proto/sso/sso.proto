@@ -77,9 +77,10 @@ message LogoutResponse {
 }
 
 message ChangePassRequest {
-  int64 user_id = 1; // ID of the user
-  string old_password = 2; // Current password of the user
-  string new_password = 3; // New password of the user
+  string email = 1;
+  string phone = 2;
+  string old_password = 3; // Current password of the user
+  string new_password = 4; // New password of the user
 }
 
 message ChangePassResponse {
