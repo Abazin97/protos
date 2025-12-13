@@ -76,13 +76,23 @@ message LogoutResponse {
   bool success = 1; // Indicates whether the logout was successful.
 }
 
-message ChangePassRequest {
+message ChangePassInitRequest {
   string email = 1;
   string phone = 2;
   string old_password = 3; // Current password of the user
   string new_password = 4; // New password of the user
 }
 
-message ChangePassResponse {
+message ChangePassInitResponse {
+  string verification_id = 1;
+  int64 expiry_time = 2;
+}
+
+message ChangePassConfirmRequest{
+  string code = 1;
+  string verification_id = 2;
+}
+
+message ChangePassConfirmResponse{
   bool success = 1;
 }
