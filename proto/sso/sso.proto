@@ -13,7 +13,8 @@ service Auth {
   // IsAdmin checks whether a user is an admin.
   rpc IsAdmin (IsAdminRequest) returns (IsAdminResponse);
   rpc Logout (LogoutRequest) returns (LogoutResponse);
-  rpc ChangePassword(ChangePassRequest) returns (ChangePassResponse);
+  rpc ChangePasswordInit(ChangePassInitRequest) returns (ChangePassInitResponse);
+  rpc ChangePasswordConfirm(ChangePassConfirmRequest) returns (ChangePassConfirmResponse);
   rpc RequestOTP(RequestOTPRequest) returns (RequestOTPResponse);
   rpc VerifyOTP(VerifyOTPRequest) returns (VerifyOTPResponse);
 }
