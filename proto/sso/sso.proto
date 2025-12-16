@@ -84,14 +84,14 @@ message ChangePassInitRequest {
 }
 
 message ChangePassInitResponse {
-  string verification_id = 1;
+  string code = 1;
   int64 uid = 2;
   int64 expiry_time = 3;
 }
 
 message ChangePassConfirmRequest{
   string code = 1;
-  string verification_id = 2;
+  int64 uid = 2;
   string email = 3;
   string new_password = 4;
 }

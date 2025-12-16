@@ -690,12 +690,12 @@ func (x *ChangePassInitRequest) GetOldPassword() string {
 }
 
 type ChangePassInitResponse struct {
-	state          protoimpl.MessageState `protogen:"open.v1"`
-	VerificationId string                 `protobuf:"bytes,1,opt,name=verification_id,json=verificationId,proto3" json:"verification_id,omitempty"`
-	Uid            int64                  `protobuf:"varint,2,opt,name=uid,proto3" json:"uid,omitempty"`
-	ExpiryTime     int64                  `protobuf:"varint,3,opt,name=expiry_time,json=expiryTime,proto3" json:"expiry_time,omitempty"`
-	unknownFields  protoimpl.UnknownFields
-	sizeCache      protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Code          string                 `protobuf:"bytes,1,opt,name=code,proto3" json:"code,omitempty"`
+	Uid           int64                  `protobuf:"varint,2,opt,name=uid,proto3" json:"uid,omitempty"`
+	ExpiryTime    int64                  `protobuf:"varint,3,opt,name=expiry_time,json=expiryTime,proto3" json:"expiry_time,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ChangePassInitResponse) Reset() {
@@ -728,9 +728,9 @@ func (*ChangePassInitResponse) Descriptor() ([]byte, []int) {
 	return file_sso_sso_proto_rawDescGZIP(), []int{13}
 }
 
-func (x *ChangePassInitResponse) GetVerificationId() string {
+func (x *ChangePassInitResponse) GetCode() string {
 	if x != nil {
-		return x.VerificationId
+		return x.Code
 	}
 	return ""
 }
@@ -750,13 +750,13 @@ func (x *ChangePassInitResponse) GetExpiryTime() int64 {
 }
 
 type ChangePassConfirmRequest struct {
-	state          protoimpl.MessageState `protogen:"open.v1"`
-	Code           string                 `protobuf:"bytes,1,opt,name=code,proto3" json:"code,omitempty"`
-	VerificationId string                 `protobuf:"bytes,2,opt,name=verification_id,json=verificationId,proto3" json:"verification_id,omitempty"`
-	Email          string                 `protobuf:"bytes,3,opt,name=email,proto3" json:"email,omitempty"`
-	NewPassword    string                 `protobuf:"bytes,4,opt,name=new_password,json=newPassword,proto3" json:"new_password,omitempty"`
-	unknownFields  protoimpl.UnknownFields
-	sizeCache      protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Code          string                 `protobuf:"bytes,1,opt,name=code,proto3" json:"code,omitempty"`
+	Uid           int64                  `protobuf:"varint,2,opt,name=uid,proto3" json:"uid,omitempty"`
+	Email         string                 `protobuf:"bytes,3,opt,name=email,proto3" json:"email,omitempty"`
+	NewPassword   string                 `protobuf:"bytes,4,opt,name=new_password,json=newPassword,proto3" json:"new_password,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ChangePassConfirmRequest) Reset() {
@@ -796,11 +796,11 @@ func (x *ChangePassConfirmRequest) GetCode() string {
 	return ""
 }
 
-func (x *ChangePassConfirmRequest) GetVerificationId() string {
+func (x *ChangePassConfirmRequest) GetUid() int64 {
 	if x != nil {
-		return x.VerificationId
+		return x.Uid
 	}
-	return ""
+	return 0
 }
 
 func (x *ChangePassConfirmRequest) GetEmail() string {
@@ -904,15 +904,15 @@ const file_sso_sso_proto_rawDesc = "" +
 	"\x15ChangePassInitRequest\x12\x14\n" +
 	"\x05email\x18\x01 \x01(\tR\x05email\x12\x14\n" +
 	"\x05phone\x18\x02 \x01(\tR\x05phone\x12!\n" +
-	"\fold_password\x18\x03 \x01(\tR\voldPassword\"t\n" +
-	"\x16ChangePassInitResponse\x12'\n" +
-	"\x0fverification_id\x18\x01 \x01(\tR\x0everificationId\x12\x10\n" +
+	"\fold_password\x18\x03 \x01(\tR\voldPassword\"_\n" +
+	"\x16ChangePassInitResponse\x12\x12\n" +
+	"\x04code\x18\x01 \x01(\tR\x04code\x12\x10\n" +
 	"\x03uid\x18\x02 \x01(\x03R\x03uid\x12\x1f\n" +
 	"\vexpiry_time\x18\x03 \x01(\x03R\n" +
-	"expiryTime\"\x90\x01\n" +
+	"expiryTime\"y\n" +
 	"\x18ChangePassConfirmRequest\x12\x12\n" +
-	"\x04code\x18\x01 \x01(\tR\x04code\x12'\n" +
-	"\x0fverification_id\x18\x02 \x01(\tR\x0everificationId\x12\x14\n" +
+	"\x04code\x18\x01 \x01(\tR\x04code\x12\x10\n" +
+	"\x03uid\x18\x02 \x01(\x03R\x03uid\x12\x14\n" +
 	"\x05email\x18\x03 \x01(\tR\x05email\x12!\n" +
 	"\fnew_password\x18\x04 \x01(\tR\vnewPassword\"5\n" +
 	"\x19ChangePassConfirmResponse\x12\x18\n" +
