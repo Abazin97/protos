@@ -783,9 +783,8 @@ func (x *ChangePassInitRequest) GetOldPassword() string {
 
 type ChangePassInitResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Code          string                 `protobuf:"bytes,1,opt,name=code,proto3" json:"code,omitempty"`
+	ExpiryTime    string                 `protobuf:"bytes,1,opt,name=expiry_time,json=expiryTime,proto3" json:"expiry_time,omitempty"`
 	Uid           int64                  `protobuf:"varint,2,opt,name=uid,proto3" json:"uid,omitempty"`
-	ExpiryTime    int64                  `protobuf:"varint,3,opt,name=expiry_time,json=expiryTime,proto3" json:"expiry_time,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -820,9 +819,9 @@ func (*ChangePassInitResponse) Descriptor() ([]byte, []int) {
 	return file_sso_sso_proto_rawDescGZIP(), []int{14}
 }
 
-func (x *ChangePassInitResponse) GetCode() string {
+func (x *ChangePassInitResponse) GetExpiryTime() string {
 	if x != nil {
-		return x.Code
+		return x.ExpiryTime
 	}
 	return ""
 }
@@ -830,13 +829,6 @@ func (x *ChangePassInitResponse) GetCode() string {
 func (x *ChangePassInitResponse) GetUid() int64 {
 	if x != nil {
 		return x.Uid
-	}
-	return 0
-}
-
-func (x *ChangePassInitResponse) GetExpiryTime() int64 {
-	if x != nil {
-		return x.ExpiryTime
 	}
 	return 0
 }
@@ -1006,12 +998,11 @@ const file_sso_sso_proto_rawDesc = "" +
 	"\x15ChangePassInitRequest\x12\x14\n" +
 	"\x05email\x18\x01 \x01(\tR\x05email\x12\x14\n" +
 	"\x05phone\x18\x02 \x01(\tR\x05phone\x12!\n" +
-	"\fold_password\x18\x03 \x01(\tR\voldPassword\"_\n" +
-	"\x16ChangePassInitResponse\x12\x12\n" +
-	"\x04code\x18\x01 \x01(\tR\x04code\x12\x10\n" +
-	"\x03uid\x18\x02 \x01(\x03R\x03uid\x12\x1f\n" +
-	"\vexpiry_time\x18\x03 \x01(\x03R\n" +
-	"expiryTime\"y\n" +
+	"\fold_password\x18\x03 \x01(\tR\voldPassword\"K\n" +
+	"\x16ChangePassInitResponse\x12\x1f\n" +
+	"\vexpiry_time\x18\x01 \x01(\tR\n" +
+	"expiryTime\x12\x10\n" +
+	"\x03uid\x18\x02 \x01(\x03R\x03uid\"y\n" +
 	"\x18ChangePassConfirmRequest\x12\x12\n" +
 	"\x04code\x18\x01 \x01(\tR\x04code\x12\x10\n" +
 	"\x03uid\x18\x02 \x01(\x03R\x03uid\x12\x14\n" +
